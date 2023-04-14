@@ -251,4 +251,93 @@ def process_response(self, packet, spacket):
 
     packet.set_payload(bytes(spacket))
 
+if name == "main":
+
+# Define the target address and port to intercept traffic to
+
+target_address = "example.com"
+
+target_port = 80
+# Initialize the interceptor
+
+interceptor = Interceptor(target_address, target_port)
+
+# Start the interceptor
+
+interceptor.start()
+
+# Initialize the interceptor
+
+interceptor = Interceptor(target_address, target_port)
+
+# Start the interceptor
+
+interceptor.start()
+
+Initialize the interceptor
+
+interceptor = Interceptor(target_address, target_port)
+
+Start the interceptor
+
+try:
+
+# Start the interceptor in a separate thread so we can stop it with the keyboard interrupt signal (CTRL+C)
+
+interceptor_thread = threading.Thread(target=interceptor.start)
+
+interceptor_thread.start()
+while True:
+
+    # Keep the main thread running to be able to stop the interceptor with the keyboard interrupt signal (CTRL+C)
+
+    time.sleep(1)
+
+while True:
+
+    # Keep the main thread running to be able to stop the interceptor with the keyboard interrupt signal (CTRL+C)
+
+    time.sleep(1)
+
+except KeyboardInterrupt:
+
+# Stop the interceptor when the keyboard interrupt signal is received (CTRL+C)
+
+interceptor.stop()
+
+interceptor_thread.join()
+
+logging.info("Interceptor stopped.")
+# Initialize the interceptor
+
+interceptor = Interceptor(target_address, target_port)
+
+# Start the interceptor in a separate thread
+
+interceptor_thread = threading.Thread(target=interceptor.start)
+
+interceptor_thread.daemon = True
+
+interceptor_thread.start()
+
+# Wait for the user to stop the interceptor
+
+try:
+
+    logging.info("Interceptor is running. Press CTRL+C to stop.")
+
+    while True:
+
+        time.sleep(1)
+
+except KeyboardInterrupt:
+
+    # Stop the interceptor when the keyboard interrupt signal is received (CTRL+C)
+
+    interceptor.stop()
+
+    interceptor_thread.join()
+
+    logging.info("Interceptor stopped.")
+
 
